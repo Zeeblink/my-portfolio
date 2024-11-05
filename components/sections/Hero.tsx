@@ -18,7 +18,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-4 pt-6"
+          className="text-4xl md:text-5xl font-bold mb-4 pt-8 md:pt-6"
         >
           Hi there! I&apos;m Emmanuel Oye.
         </motion.h2>
