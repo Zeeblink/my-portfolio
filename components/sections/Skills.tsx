@@ -23,7 +23,7 @@ const SkillsSection = () => (
                 alt={tech.name}
                 layout="fill"
                 objectFit="contain"
-                className="filter brightness-0 invert"
+                className={tech.class}
               />
             </div>
             <span className="font-medium">{tech.name}</span>

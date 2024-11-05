@@ -28,8 +28,8 @@ export default function Portfolio() {
       <AboutSection />
       <ServicesSection />
       <SkillsSection />
-      <ExperienceSection />
       <ProjectsSection />
+      <ExperienceSection />
       <ContactSection />
     </>
   )

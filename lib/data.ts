@@ -1,4 +1,4 @@
-import { Code2, Database, Lock, Layout } from "lucide-react"
+import { Code2, Search, LayoutDashboard, Database, } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
 
 interface Service {
@@ -10,35 +10,67 @@ interface Service {
 export const services: Service[] = [
   {
     icon: Code2,
-    title: "Web Development",
-    description: "Building responsive and performant web applications using Next.js and TypeScript."
+    title: "Frontend Development",
+    description: "I build modern, responsive interfaces with React and Next.js, focusing on performance and a seamless user experience."
+  },
+  {
+    icon: Search,
+    title: "Next.js Optimized SEO Landing Pages",
+    description: "I create high-performance, SEO-friendly landing pages that boost visibility and drive engagement."
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Implementing Designs (Figma to Code)",
+    description: "I transform Figma and other designs into pixel-perfect, responsive web pages that match the original vision."
   },
   {
     icon: Database,
-    title: "Database Design",
-    description: "Designing and implementing efficient database solutions with PostgreSQL and Prisma ORM."
-  },
-  {
-    icon: Lock,
-    title: "Authentication",
-    description: "Implementing secure authentication systems using Clerk and other modern auth solutions."
-  },
-  {
-    icon: Layout,
-    title: "UI/UX Development",
-    description: "Creating beautiful and intuitive user interfaces with Tailwind CSS and modern design principles."
+    title: "Fullstack Web Apps",
+    description: "I develop full-featured web apps, handling everything from frontend to backend with a secure, scalable setup."
   }
 ]
 
 export const techStack = [
-  { name: "Next.js", logo: "/logos/nextjs.svg" },
-  { name: "TypeScript", logo: "/logos/typescript.svg" },
-  { name: "GitHub", logo: "/logos/github.svg" },
-  { name: "Tailwind CSS", logo: "/logos/tailwind.svg" },
-  { name: "Prisma", logo: "/logos/prisma.svg" },
-  { name: "Supabase", logo: "/logos/supabase.svg" },
-  { name: "PostgreSQL", logo: "/logos/postgresql.svg" },
-  { name: "Clerk", logo: "/logos/clerk.svg" }
+  {
+    name: "Next.js",
+    logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+    class: "filter brightness-0 invert"
+  },
+  {
+    name: "TypeScript",
+    logo: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+    class: ""
+  },
+  {
+    name: "GitHub",
+    logo: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+    class: ""
+  },
+  {
+    name: "Tailwind CSS",
+    logo: "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
+    class: ""
+  },
+  {
+    name: "Prisma",
+    logo: "https://cdn.worldvectorlogo.com/logos/prisma-2.svg",
+    class: ""
+  },
+  {
+    name: "Supabase",
+    logo: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png",
+    class: ""
+  },
+  {
+    name: "PostgreSQL",
+    logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
+    class: ""
+  },
+  {
+    name: "Clerk",
+    logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_c58d5fd4ba449e621bdcd01ac1f00976/clerk-dev.png",
+    class: ""
+  }
 ]
 
 export const projects = [
@@ -59,8 +91,8 @@ export const projects = [
   {
     id: 3,
     title: "Isalesbook",
-    description: "",
-    src: "/",
+    description: "SEO optimized landing website for a Inventory software solution company",
+    src: "/images/isalesbook.png",
     link: "https://isalesbook.com"
   }
 ]
