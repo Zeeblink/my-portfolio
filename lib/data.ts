@@ -99,15 +99,24 @@ export const projects = [
 
 export const experience = [
   {
-    period: "2023 - Present",
-    role: "Freelance Web Developer",
-    company: "Self-employed",
+    period: "July 2024 - Present",
+    role: "Next.js Web Developer",
+    company: "RDAS SOFTTECH",
+    link: "https://rdas.com.ng",
     description: "Developing custom web applications for clients using Next.js and modern web technologies."
   },
   {
-    period: "2022 - 2023",
-    role: "Computer Science Student",
-    company: "University",
-    description: "Completed coursework in algorithms, data structures, and software engineering principles."
-  }
+    period: "August 2024 - Present",
+    role: "Freelance Next.js Web Developer",
+    company: "Self-employed",
+    link: "#",
+    description: "Developing custom web applications for clients using Next.js and modern web technologies."
+  },
+  // {
+  //   period: "2022 - 2023",
+  //   role: "Computer Science Student",
+  //   company: "University",
+  //   link: "#",
+  //   description: "Completed coursework in algorithms, data structures, and software engineering principles."
+  // }
 ]

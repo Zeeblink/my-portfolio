@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import FloatingTriangle from "../animated/FloatingTriangle";
 import Section from "../Section";
 import { experience } from "@/lib/data";
+import Link from "next/link";
 
 const ExperienceSection = () => (
     <Section id="experience">
@@ -21,7 +22,7 @@ const ExperienceSection = () => (
             <div className="absolute w-4 h-4 bg-yellow-400 rounded-full left-[-9px] top-0" />
             <span className="text-yellow-400 text-sm">{exp.period}</span>
             <h4 className="text-xl font-semibold mt-1">{exp.role}</h4>
-            <p className="text-gray-400 mt-1">{exp.company}</p>
+            <Link href={exp.link} className="text-gray-400 mt-1">{exp.company}</Link>
             <p className="mt-2">{exp.description}</p>
           </motion.div>
         ))}
