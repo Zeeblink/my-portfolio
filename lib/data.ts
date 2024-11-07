@@ -103,7 +103,7 @@ export const experience = [
     role: "Next.js Web Developer",
     company: "RDAS SOFTTECH",
     link: "https://rdas.com.ng",
-    description: "Developing custom web applications for clients using Next.js and modern web technologies."
+    description: "Current Web developer at rdas.com.ng"
   },
   {
     period: "August 2024 - Present",
