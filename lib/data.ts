@@ -76,25 +76,32 @@ export const techStack = [
 export const projects = [
   {
     id: 1,
-    title: "Dish Palette",
-    description: "Next.js Full-stack CRUD recipe blog, with authentication and authorization.",
-    src: "/images/dish-palette.png",
-    link: "https://dish-palette-fullstack.vercel.app"
-  },
-  {
-    id: 2,
     title: "RDAS SOFTECH",
     description: "Landing Website for a software solution company developed with Next.js",
     src: "/images/rdas.png",
     link: "https://rdas.com.ng"
   },
   {
-    id: 3,
+    id: 2,
     title: "Isalesbook",
     description: "SEO optimized landing website for a Inventory software solution company",
     src: "/images/isalesbook.png",
     link: "https://isalesbook.com"
-  }
+  },
+  {
+    id: 3,
+    title: "Moonex",
+    description: "Landing page for a Web3 startup",
+    src: "/images/moonex.png",
+    link: "https://moonex-gules.vercel.app/"
+  },
+  {
+    id: 4,
+    title: "Dish Palette",
+    description: "Next.js Full-stack CRUD recipe blog, with authentication and authorization.",
+    src: "/images/dish-palette.png",
+    link: "https://dish-palette-fullstack.vercel.app"
+  },
 ]
 
 export const experience = [
