@@ -91,7 +91,7 @@ export const projects = [
   {
     id: 3,
     title: "Moonex",
-    description: "Landing page for a Web3 startup",
+    description: "Landing page for a Web3 startup built with React",
     src: "/images/moonex.png",
     link: "https://moonex-gules.vercel.app/"
   },
