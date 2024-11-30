@@ -12,7 +12,7 @@ const ProjectsSection = () => (
     <Section id="projects">
     <div className="relative">
       <FloatingTriangle className="text-yellow-400 right-0 bottom-0" />
-      <h3 className="text-3xl font-bold mb-8">Projects I've worked on</h3>
+      <h3 className="text-3xl font-bold mb-8">Some Projects I&apos;ve worked on</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <motion.div
