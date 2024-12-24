@@ -18,7 +18,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-4 pt-8 md:pt-6"
+          className="text-4xl md:text-5xl font-bold mb-8 pt-8 md:pt-6"
         >
           Hi there! I&apos;m Emmanuel Oye.
         </motion.h2>
@@ -26,9 +26,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-base md:text-xl mb-8"
+          className="text-base md:text-xl mb-8 leading-relaxed"
         >
-          React | Next.js Developer
+          Your friendly neighborhood front-end developer. <br />
+          React | Next.js
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
