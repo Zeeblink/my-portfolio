@@ -78,7 +78,7 @@ export const projects = [
     id: 1,
     title: "PullVid App",
     description: "PullVid is a video downloader app that allows users to download videos from various platforms like YouTube, Twitter, Facebook, Instagram, and TikTok.",  
-    src: "/images/pullvid.png",
+    src: "/images/pullvid2.png",
     link: "https://pullvid.vercel.app/"
   },
   {
