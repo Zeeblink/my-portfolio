@@ -22,7 +22,7 @@ const Contact = () => {
 
   return (
     <Section id="contact">
-      <div className="max-w-2xl mx-auto relative">
+      <div className="max-w-2xl mx-auto relative md:px-12">
         <FloatingShape className="text-yellow-400 left-0 top-0" />
         <FloatingTriangle className="text-yellow-400 right-0 bottom-0" />
         <h3 className="text-3xl font-bold mb-8 text-center">Get In Touch</h3>

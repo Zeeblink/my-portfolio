@@ -8,7 +8,7 @@ import { Download } from "lucide-react";
 
 const AboutSection = () => (
   <Section id="about">
-    <div className="grid md:grid-cols-2 gap-8 items-center relative">
+    <div className="grid lg:grid-cols-2 gap-8 items-center relative md:px-6 lg:px-16">
       <FloatingShape className="text-yellow-400 left-0 top-0" />
       <div>
         <h3 className="text-3xl font-bold mb-4">About Me</h3>
@@ -30,7 +30,7 @@ const AboutSection = () => (
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3408_2_-removebg-preview-1d77l2DTtaCcKLIdTmyeBvy55zZDWL.png"
           alt="Emmanuel Oye"
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
           className="rounded-lg"
           priority
         />

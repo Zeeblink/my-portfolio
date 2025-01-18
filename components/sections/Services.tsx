@@ -6,7 +6,7 @@ import { services } from "@/lib/data";
 
 const ServicesSection = () => (
   <Section id="services">
-    <div className="relative">
+    <div className="relative md:px-6 lg:px-16">
       <FloatingTriangle className="text-yellow-400 right-0 top-0" />
       <h3 className="text-3xl font-bold mb-8 text-center">My Services</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

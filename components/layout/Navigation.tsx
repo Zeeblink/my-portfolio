@@ -57,7 +57,7 @@ export const Navigation = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center z-40 bg-black/80 backdrop-blur-sm border-b border-gray-800">
         <h1 className="text-2xl font-bold">Emmanuel Oye</h1>
-        <ul className="hidden md:flex space-x-4">
+        <ul className="hidden lg:flex space-x-4">
           {navItems.map((item) => (
             <li key={item}>
               <a
@@ -72,7 +72,7 @@ export const Navigation = () => {
           ))}
         </ul>
         <Button 
-          className="md:hidden" 
+          className="lg:hidden" 
           variant="ghost" 
           size="icon"
           onClick={toggleMenu}

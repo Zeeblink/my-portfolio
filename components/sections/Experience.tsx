@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const ExperienceSection = () => (
     <Section id="experience">
-    <div className="relative max-w-3xl mx-auto">
+    <div className="relative max-w-3xl mx-auto md:px-12 lg:px-16">
       <FloatingTriangle className="text-yellow-400 right-0 top-0" />
       <h3 className="text-3xl font-bold mb-8 text-center">Work Experience</h3>
       <div className="space-y-8">

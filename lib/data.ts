@@ -113,15 +113,15 @@ export const projects = [
 
 export const experience = [
   {
-    period: "July 2024 - Present",
-    role: "Next.js Web Developer",
+    period: "July 2024 - December 2024",
+    role: "Next.js Front-end Developer",
     company: "RDAS SOFTTECH",
     link: "https://rdas.com.ng",
-    description: "Current Web developer at rdas.com.ng"
+    description: "5-months contracts at rdas.com.ng"
   },
   {
     period: "August 2024 - Present",
-    role: "Freelance Next.js Web Developer",
+    role: "Freelance Next.js Front-end Developer",
     company: "Self-employed",
     link: "#",
     description: "Developing custom web applications for clients using Next.js and modern web technologies."
