@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "Figma-to-Code developer",
     "Next.js & Tailwind CSS Developer",
     "Modern Responsive Web Apps Portfolio",
+    "Emmanuel Oye",
   ],
   title: 'Emmanuel Oye | Next.js & Frontend Developer',
   description: 'Frontend Developer specializing in Next.js, React, and Tailwind. I build modern, fast and SEO-friendly web apps and landing pages. Check out my work!',
