@@ -11,8 +11,22 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Emmanuel Oye - Web Developer',
-  description: 'Portfolio of Emmanuel Oye, React and Next.js Developer',
+  metadataBase: new URL('https://emmanueloye.xyz'),
+  keywords: [
+    "Frontend Developer",
+    "Next.js Developer",
+    "Web Developer",
+    "React Developer Portfolio",
+    "Next.js Developer Portfolio",
+    "Frontend Developer Portfolio",
+    "Hire Freelance Next.js Developer",
+    "SEO Optimized Next.js Landing Pages",
+    "Figma-to-Code developer",
+    "Next.js & Tailwind CSS Developer",
+    "Modern Responsive Web Apps Portfolio",
+  ],
+  title: 'Emmanuel Oye | Next.js & Frontend Developer',
+  description: 'Frontend Developer specializing in Next.js, React, and Tailwind. I build modern, fast and SEO-friendly web apps and landing pages. Check out my work!',
 }
 
 export default function RootLayout({
