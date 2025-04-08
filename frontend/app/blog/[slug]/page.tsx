@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { client, urlFor } from "@/sanity-lib/client"; // Combined imports
-import { postQuery, blogQuery } from "@/sanity-lib/queries";
+import { postQuery } from "@/sanity-lib/queries";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { components } from "@/lib/portableText";
