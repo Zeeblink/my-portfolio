@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
-import {Navigation} from '@/components/layout/Navigation'
+import { Navigation } from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 
 const montserrat = Montserrat({
@@ -26,8 +26,14 @@ export const metadata: Metadata = {
     "Modern Responsive Web Apps Portfolio",
     "Emmanuel Oye",
   ],
-  title: 'Emmanuel Oye | Next.js & Frontend Developer',
-  description: 'Frontend Developer specializing in Next.js, React, and Tailwind. I build modern, fast and SEO-friendly web apps and landing pages. Check out my work!',
+  title: {
+    default: 'Emmanuel Oye | Next.js & Frontend Developer',
+    template: '%s | Emmanuel Oye',
+  },
+  openGraph: {
+    description: 'Frontend Developer specializing in Next.js, React, and Tailwind. I build modern, fast and SEO-friendly web apps and landing pages. Check out my work!',
+    images: ['']
+  }
 }
 
 export default function RootLayout({

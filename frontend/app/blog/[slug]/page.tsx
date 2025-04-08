@@ -1,23 +1,88 @@
-import { client } from "@/sanity-lib/client";
+import { Metadata } from 'next';
+import { client, urlFor } from "@/sanity-lib/client"; // Combined imports
 import { postQuery, blogQuery } from "@/sanity-lib/queries";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { components } from "@/lib/portableText";
-import { urlFor } from "@/sanity-lib/client";
 import { notFound } from "next/navigation";
+import { Post } from '@/lib/types'; // Assuming you have a Post type defined
 
 interface Params {
-    params: Promise<{
+    params: {
         slug: string;
-    }>;
+    };
 }
+
+// Helper function to safely get text for description
+function getPlainText(blocks: any[] = []) {
+    return blocks
+        // loop through each block
+        .map(block => {
+            // if it's not a text block with children, 
+            // return nothing
+            if (block._type !== 'block' || !block.children) {
+                return ''
+            }
+            // loop through the children spans, and join the
+            // text strings
+            return block.children.map((child: any) => child.text).join('')
+        })
+        // join the paragraphs leaving split by two linebreaks
+        .join('\n\n')
+}
+
+
+// Generate dynamic metadata
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+    const { slug } = params;
+    const post: Post = await client.fetch(postQuery, { slug });
+
+    if (!post) {
+        // Return metadata for not found page
+        return {
+            title: "Post Not Found",
+            description: "The requested blog post could not be found.",
+        };
+    }
+
+    // Generate a description from the body content
+    const description = post.body ? getPlainText(post.body).substring(0, 160) : 'Read this blog post';
+
+    return {
+        title: post.title,
+        description: description,
+        openGraph: {
+            title: post.title,
+            description: description,
+            type: 'article',
+            publishedTime: post._createdAt,
+            authors: post.authorName ? [post.authorName] : [],
+            url: `/blog/${post.slug.current}`, // Add the canonical URL
+            images: post.mainImage ? [
+                {
+                    url: urlFor(post.mainImage).width(1200).height(630).fit('crop').url(), // Use fit('crop') for better OG image aspect ratio
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ] : [], // Add image if it exists
+        },
+        // Example for Twitter Card (optional)
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description: description,
+            images: post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).fit('crop').url()] : [],
+        },
+    };
+}
+
 
 // This is a dynamic route for blog posts.
 export default async function BlogPost({ params }: Params) {
-
-    const { slug } = await params;
+    const { slug } = params; // Access slug directly from params
     // Fetch the post data using our Sanity client
-    const post = await client.fetch(postQuery, { slug });
+    const post: Post = await client.fetch(postQuery, { slug });
 
     // Use Next.js's new notFound() helper to gracefully handle missing data
     if (!post) return notFound();
@@ -27,23 +92,26 @@ export default async function BlogPost({ params }: Params) {
             <div className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
                 <div className="flex gap-4 text-gray-400">
-                    <span>{new Date(post._createdAt).toLocaleDateString()}</span>
-                    <span>by {post.authorName}</span>
+                    {post._createdAt && <span>{new Date(post._createdAt).toLocaleDateString()}</span>}
+                    {post.authorName && <span>by {post.authorName}</span>}
                 </div>
             </div>
 
             {post.mainImage ? (
-                <Image
-                    src={urlFor(post.mainImage).url()}
-                    alt={post.title}
-                    width={1200}
-                    height={630}
-                    className="rounded-lg mb-8"
-                />
+                <div className="relative w-full h-96 mb-8"> {/* Added container for better image handling */}
+                    <Image
+                        src={urlFor(post.mainImage).url()}
+                        alt={post.title}
+                        fill // Use fill for responsive image sizing within container
+                        style={{ objectFit: 'cover' }} // Ensure image covers the area
+                        className="rounded-lg"
+                        priority // Prioritize loading the main image
+                    />
+                </div>
             ) : null}
 
-            <div className="prose prose-invert max-w-none">
-                <PortableText value={post.body} components={components} />
+            <div className="prose prose-lg prose-invert max-w-none"> {/* Increased prose size */}
+                {post.body && <PortableText value={post.body} components={components} />}
             </div>
         </article>
     );
@@ -51,8 +119,9 @@ export default async function BlogPost({ params }: Params) {
 
 // Next.js 15’s new static param generation for dynamic routes.
 export async function generateStaticParams() {
-    const posts = await client.fetch(blogQuery);
-    return posts.map((post: { slug: { current: string } }) => ({
+    // Fetch only slugs for efficiency
+    const posts: { slug: { current: string } }[] = await client.fetch(`*[_type == "post" && defined(slug.current)]{ "slug": slug }`);
+    return posts.map((post) => ({
         slug: post.slug.current,
     }));
 }

@@ -10,6 +10,9 @@ export interface Post {
             url: string;
         };
     };
-    excerpt: string;
+    excerpt?: string; // Made optional as it wasn't used in page.tsx
     categories?: string[];
+    _createdAt: string; // Added creation timestamp
+    authorName?: string; // Added author name (optional based on usage)
+    body?: any[]; // Added body for Portable Text (optional)
 }
