@@ -7,11 +7,12 @@ import { urlFor } from "@/sanity-lib/client";
 import { notFound } from "next/navigation";
 
 interface Params {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
+// This is a dynamic route for blog posts.
 export default async function BlogPost({ params }: Params) {
 
     const { slug } = await params;
