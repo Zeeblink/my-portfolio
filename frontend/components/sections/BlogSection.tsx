@@ -12,7 +12,7 @@ interface BlogSectionProps {
 }
 
 export const BlogSection = ({ posts }: BlogSectionProps) => (
-    <section className="relative px-12 py-16 md:px-6 lg:px-16">
+    <section className="relative px-3 py-16 md:px-6 lg:px-16">
         {/* <div className="container mx-auto px-4"> */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -21,9 +21,9 @@ export const BlogSection = ({ posts }: BlogSectionProps) => (
                 transition={{ duration: 0.8 }}
                 className="text-center mb-16"
             >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Latest Articles</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Latest Blog Posts</h2>
                 <p className="text-gray-300 max-w-2xl mx-auto">
-                    Explore my latest thoughts and insights on design, development, and creative processes.
+                    Explore thoughts, insights and news on Frontend development.
                 </p>
             </motion.div>
 
