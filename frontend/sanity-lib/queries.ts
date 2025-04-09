@@ -20,3 +20,16 @@ export const postQuery = `*[_type == "post" && slug.current == $slug][0]{
   "authorName": author->name,
   "categories": categories[]->title,
 }`;
+
+// Query to fetch 3 latest posts for the homepage
+export const latestPostsQuery = `*[_type == "post"]{
+  _id,
+  _createAt,
+  _updatedAt,
+  title,
+  slug,
+  publishedAt,
+  excerpt,
+  mainImage,
+  "categories": categories[]->title,
+} | order(publishedAt desc)[0...3]`;

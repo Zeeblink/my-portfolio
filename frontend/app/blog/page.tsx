@@ -1,6 +1,6 @@
 import { client } from "@/sanity-lib/client";
 import { blogQuery } from "@/sanity-lib/queries";
-import { BlogList } from "@/components/sections/Blog";
+import { BlogList } from "@/components/sections/BlogList";
 import Section from "@/components/Section";
 
 export default async function BlogPage() {

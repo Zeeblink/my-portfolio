@@ -1,5 +1,3 @@
-'use client'
-
 import HomeSection from '@/components/sections/Hero'
 import AboutSection from '@/components/sections/About'
 import dynamic from 'next/dynamic'
@@ -8,28 +6,25 @@ const SkillsSection = dynamic(() => import('@/components/sections/Skills'))
 const ExperienceSection = dynamic(() => import('@/components/sections/Experience'))
 const ProjectsSection = dynamic(() => import('@/components/sections/Projects'))
 const ContactSection = dynamic(() => import('@/components/sections/Contact'))
-import { motion, useScroll, useSpring } from 'framer-motion'
+const ScrollProgressBar = dynamic(() => import('@/components/animated/ScrollProgessBar'))
+import { client }from '@/sanity-lib/client'
+import { latestPostsQuery } from '@/sanity-lib/queries'
+import { BlogSection } from '@/components/sections/BlogSection'
 
-export default function Portfolio() {
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  })
 
+export default async function Portfolio() {
+  const latestPosts = await client.fetch(latestPostsQuery)
+  
   return (
     <>
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-yellow-400 origin-left z-50"
-        style={{ scaleX }}
-      />
+      <ScrollProgressBar />
       <HomeSection />
       <AboutSection />
       <ServicesSection />
       <SkillsSection />
       <ProjectsSection />
       <ExperienceSection />
+      <BlogSection posts={latestPosts} />
       <ContactSection />
     </>
   )
