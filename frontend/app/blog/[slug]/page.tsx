@@ -6,6 +6,7 @@ import Image from "next/image";
 import { components } from "@/lib/portableText";
 import { notFound } from "next/navigation";
 import { Post } from '@/lib/types'; // Assuming you have a Post type defined
+import { PortableTextBlock } from '@portabletext/types';
 
 interface Params {
     params: {
@@ -14,7 +15,7 @@ interface Params {
 }
 
 // Helper function to safely get text for description
-function getPlainText(blocks: any[] = []) {
+function getPlainText(blocks:PortableTextBlock[] = []) {
     return blocks
         // loop through each block
         .map(block => {
@@ -25,7 +26,7 @@ function getPlainText(blocks: any[] = []) {
             }
             // loop through the children spans, and join the
             // text strings
-            return block.children.map((child: any) => child.text).join('')
+            return block.children.map((child) => child.text).join('')
         })
         // join the paragraphs leaving split by two linebreaks
         .join('\n\n')
