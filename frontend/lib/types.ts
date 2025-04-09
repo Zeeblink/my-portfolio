@@ -1,4 +1,6 @@
 
+import { PortableTextBlock } from '@portabletext/types';
+
 export interface Post {
     _id: string;
     title: string;
@@ -14,5 +16,5 @@ export interface Post {
     categories?: string[];
     _createdAt: string; // Added creation timestamp
     authorName?: string; // Added author name (optional based on usage)
-    body?: any[]; // Added body for Portable Text (optional)
+    body?: PortableTextBlock[]; // Added body for Portable Text (optional)
 }
