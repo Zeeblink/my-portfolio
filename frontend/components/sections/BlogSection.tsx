@@ -12,7 +12,7 @@ interface BlogSectionProps {
 }
 
 export const BlogSection = ({ posts }: BlogSectionProps) => (
-    <section className="relative px-3 py-16 md:px-6 lg:px-16">
+    <section className="relative px-1 py-16 md:px-6 lg:px-16">
         {/* <div className="container mx-auto px-4"> */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

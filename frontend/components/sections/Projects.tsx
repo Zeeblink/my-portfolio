@@ -10,7 +10,7 @@ import FloatingTriangle from "../animated/FloatingTriangle";
 
 const ProjectsSection = () => (
     <Section id="projects">
-    <div className="relative px-3 md:px-6 lg:px-16">
+    <div className="relative px-1 md:px-6 lg:px-16">
       <FloatingTriangle className="text-yellow-400 right-0 bottom-0" />
       <h3 className="text-3xl font-bold mb-8">Frontend Projects I&apos;ve worked on:</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
