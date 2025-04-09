@@ -45,13 +45,16 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         };
     }
 
-    // Generate a description from the body content
+    // Generate a description from the body content 
+    // if it exists, otherwise use a default description
+    // Limit the description to 160 characters
     const description = post.body ? getPlainText(post.body).substring(0, 160) : 'Read this blog post';
 
+    // Generate metadata for the blog post
     return {
-        title: post.title,
-        description: description,
-        openGraph: {
+        title: post.title, // Use the post's title for SEO
+        description: description, // Use the generated description for SEO
+        openGraph: { 
             title: post.title,
             description: description,
             type: 'article',

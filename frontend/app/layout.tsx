@@ -4,12 +4,14 @@ import './globals.css'
 import { Navigation } from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 
+// Font
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap'
 })
 
+//  Generate metadata for the entire site
 export const metadata: Metadata = {
   metadataBase: new URL('https://emmanueloye.xyz'),
   keywords: [

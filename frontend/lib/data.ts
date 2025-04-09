@@ -32,45 +32,45 @@ export const services: Service[] = [
 
 export const techStack = [
   {
+    name: "React",
+    logo: "/logos/reactjs.svg",
+    class: ""
+  },
+  {
     name: "Next.js",
-    logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+    logo: "/logos/nextjs.svg",
     class: "filter brightness-0 invert"
   },
   {
     name: "TypeScript",
-    logo: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-    class: ""
-  },
-  {
-    name: "GitHub",
-    logo: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+    logo: "/logos/typescript.svg",
     class: ""
   },
   {
     name: "Tailwind CSS",
-    logo: "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
+    logo: "/logos/tailwindcss.svg",
+    class: ""
+  },
+  {
+    name: "Shadcn UI",
+    logo: "/logos/shadcnui.svg",
+    class: ""
+  },
+  {
+    name: "GitHub",
+    logo: "/logos/github.svg",
     class: ""
   },
   {
     name: "Prisma",
-    logo: "https://cdn.worldvectorlogo.com/logos/prisma-2.svg",
+    logo: "/logos/prisma.svg",
     class: ""
-  },
-  {
-    name: "Supabase",
-    logo: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png",
-    class: ""
-  },
+  }, 
   {
     name: "PostgreSQL",
-    logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
+    logo: "/logos/postgresql.svg",
     class: ""
   },
-  {
-    name: "Clerk",
-    logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_c58d5fd4ba449e621bdcd01ac1f00976/clerk-dev.png",
-    class: ""
-  }
 ]
 
 export const projects = [
