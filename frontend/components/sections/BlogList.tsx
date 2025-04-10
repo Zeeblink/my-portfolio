@@ -10,9 +10,9 @@ interface BlogListProps {
 }
 
 export const BlogList = ({ posts }: BlogListProps) => (
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-1 md:px-8 lg:px-16">
         {posts.map((post: Post, i: number) => (
-            <motion.article
+            <motion.div
                 key={post._id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export const BlogList = ({ posts }: BlogListProps) => (
                         Read more →
                     </Link>
                 </div>
-            </motion.article>
+            </motion.div>
         ))}
     </div>
 );

@@ -8,7 +8,7 @@ export default async function BlogPage() {
   
   return (
     <Section id="blog" className="min-h-screen">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <h1 className="text-4xl text-center font-bold mb-16">Welcome to my Blog</h1>
       <BlogList posts={posts} />
     </Section>
   );
