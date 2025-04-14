@@ -7,6 +7,7 @@ import { components } from "@/lib/portableText";
 import { notFound } from "next/navigation";
 import { Post } from '@/lib/types'; // Assuming you have a Post type defined
 import { PortableTextBlock } from '@portabletext/types';
+import ShareButton from '@/components/blog/share-button';
 
 interface Params {
     params: Promise<{
@@ -91,8 +92,9 @@ export default async function BlogPost({ params }: Params) {
     // Use Next.js's new notFound() helper to gracefully handle missing data
     if (!post) return notFound();
 
+    const shareURL = `https://www.emmanueloye.xyz/blog/${post.slug.current}`;
     return (
-        <article className="max-w-3xl mx-auto py-16 px-2">
+        <article className="max-w-3xl mx-auto py-16 px-1">
             <div className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
                 <div className="flex gap-4 text-gray-400">
@@ -116,6 +118,9 @@ export default async function BlogPost({ params }: Params) {
 
             <div className="prose prose-lg prose-invert max-w-none"> {/* Increased prose size */}
                 {post.body && <PortableText value={post.body} components={components} />}
+            </div>
+            <div className='flex justify-center lg:justify-end mt-20'>
+                <ShareButton url={shareURL} title={post.title}/> {/* Share button for social media */}
             </div>
         </article>
     );
