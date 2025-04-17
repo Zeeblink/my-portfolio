@@ -56,6 +56,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     return {
         title: post.title, // Use the post's title for SEO
         description: description, // Use the generated description for SEO
+        alternates: {
+            canonical: `https://www.emmanueloye.xyz/blog/${post.slug.current}`, // Add the canonical URL
+        },
         openGraph: { 
             title: post.title,
             description: description,
