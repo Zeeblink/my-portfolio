@@ -1,24 +1,38 @@
-import { revalidatePath } from 'next/cache';
-import { type NextRequest, NextResponse } from 'next/server';
+// ./src/app/api/revalidate-path/route.ts
+
+import { revalidatePath } from 'next/cache'
+import { type NextRequest, NextResponse } from 'next/server'
+import { parseBody } from 'next-sanity/webhook'
+
+type WebhookPayload = { path?: string }
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { token } = body;
-
-    // Check for secret token
-    if (token !== process.env.SANITY_REVALIDATE_SECRET) {
-      return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
+    // Ensure the SANITY_REVALIDATE_SECRET is available
+    if (!process.env.SANITY_REVALIDATE_SECRET) {
+      return new Response('Missing environment variable SANITY_REVALIDATE_SECRET', { status: 500 })
     }
 
-    // Revalidate the pages that show blog content
-    revalidatePath('/');
-    revalidatePath('/blog');
-    revalidatePath('/blog/[slug]');
+    // Parse the request body to validate the signature and extract the path
+    // The parseBody function checks the signature and returns the body if valid
+    const { isValidSignature, body } = await parseBody<WebhookPayload>(
+      req,
+      process.env.SANITY_REVALIDATE_SECRET,
+    )
 
-    return NextResponse.json({ revalidated: true, now: Date.now() });
+    
+    if (!isValidSignature) {
+      return new Response('Invalid signature', { status: 401 })
+    } else if (!body?.path) {
+      return new Response('Bad Request', { status: 400 })
+    }
+
+    // If the signature is valid and the path is provided, revalidate the path
+    revalidatePath(body.path)
+    return NextResponse.json({ body })
   } catch (err) {
-    console.error(err);
-    return NextResponse.json({ message: 'Error revalidating' }, { status: 500 });
+    console.error(err)
+    return new Response((err as Error).message, { status: 500 })
+
   }
 }
