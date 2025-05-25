@@ -1,5 +1,6 @@
 import { PortableTextComponents } from "@portabletext/react";
 import { urlFor } from "@/sanity-lib/client";
+import Image from "next/image";
 
 export const components: PortableTextComponents = {
   types: {
@@ -8,10 +9,12 @@ export const components: PortableTextComponents = {
         return null;
       }
       return (
-        <img
+        <Image
           src={urlFor(value).url()}
           alt={value.alt || ' '}
           className="my-6 rounded-lg"
+          width={value.asset.metadata.dimensions.width}
+          height={value.asset.metadata.dimensions.height}
         />
       );
     },
