@@ -74,6 +74,13 @@ export const techStack = [
 ]
 
 export const projects = [
+
+  {
+    title: "Professional Portfolio Website",
+    description: "Professional portfolio website for a client, showcasing their expertises, experience, projects, etc.",  
+    src: "/images/opeyemi.png",
+    link: "https://opeyemi-five.vercel.app/"
+  },
   {
     title: "NFT Marketplace",
     description: "Frontend project of a seamless NFT Marketplace built with Next.js and shadcn UI",  
