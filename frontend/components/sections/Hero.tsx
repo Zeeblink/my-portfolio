@@ -29,7 +29,7 @@ export default function HeroSection() {
           className="text-base md:text-xl mb-8 leading-relaxed"
         >
           Your friendly neighborhood front-end developer. <br />
-          React | Next.js
+          I build Beautiful, Sleek, and Modern Websites.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
