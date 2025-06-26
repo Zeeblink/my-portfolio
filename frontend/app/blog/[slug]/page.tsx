@@ -9,10 +9,10 @@ import { Post } from '@/lib/types'; // Assuming you have a Post type defined
 import { PortableTextBlock } from '@portabletext/types';
 import ShareButton from '@/components/blog/share-button';
 
-interface Props {
-    params: {
+interface Params {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 // Helper function to safely get text for description
@@ -35,8 +35,8 @@ function getPlainText(blocks:PortableTextBlock[] = []) {
 
 
 // Generate dynamic metadata
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { slug } = params;
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+    const { slug } = await params;
     const post: Post = await client.fetch(postQuery, { slug });
 
     if (!post) {
@@ -87,8 +87,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 
 // This is a dynamic route for blog posts.
-export default async function BlogPost({ params }: Props) {
-    const { slug } = params; // Access slug directly from params
+export default async function BlogPost({ params }: Params) {
+    const { slug } = await params; // Access slug directly from params
     // Fetch the post data using our Sanity client
     const post: Post = await client.fetch(postQuery, { slug });
 
