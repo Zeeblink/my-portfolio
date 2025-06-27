@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     default: 'Emmanuel Oye | Next.js & Frontend Developer',
     template: '%s | Emmanuel Oye',
   },
+  description: 'Frontend Developer specializing in Next.js, React, and Tailwind. I build modern, fast and SEO-friendly web apps and landing pages. Check out my work!',
+  alternates: {
+    canonical: 'https://emmanueloye.xyz',
+  },
   openGraph: {
     description: 'Frontend Developer specializing in Next.js, React, and Tailwind. I build modern, fast and SEO-friendly web apps and landing pages. Check out my work!',
     images: ['']

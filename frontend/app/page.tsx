@@ -10,16 +10,12 @@ const ScrollProgressBar = dynamic(() => import('@/components/animated/ScrollProg
 import { client } from '@/sanity-lib/client'
 import { latestPostsQuery } from '@/sanity-lib/queries'
 import { BlogSection } from '@/components/sections/BlogSection'
-import Head from 'next/head'
 
 export default async function Portfolio() {
   const latestPosts = await client.fetch(latestPostsQuery)
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://emmanueloye.xyz/" />
-      </Head>
       <ScrollProgressBar />
       <HomeSection />
       <AboutSection />
