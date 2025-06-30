@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
             type: 'article',
             publishedTime: post._createdAt,
             authors: post.authorName ? [post.authorName] : [],
-            url: `/blog/${post.slug.current}`, // Add the canonical URL
+            url: `https://emmanueloye.xyz/blog/${post.slug.current}`, // Add the canonical URL
             images: post.mainImage ? [
                 {
                     url: urlFor(post.mainImage).width(1200).height(630).fit('crop').url(), // Use fit('crop') for better OG image aspect ratio
