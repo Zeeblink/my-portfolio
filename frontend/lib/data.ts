@@ -1,4 +1,4 @@
-import { Code, Code2, Search, LayoutDashboard, Database, } from "lucide-react"
+import { Code, Code2, Search, LayoutDashboard, } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
 
 interface Service {
