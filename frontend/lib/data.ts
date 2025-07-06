@@ -77,9 +77,15 @@ export const projects = [
 
   {
     title: "Professional Portfolio Website",
-    description: "Professional portfolio website for a client, showcasing their expertises, experience, projects, etc.",  
+    description: "Professional portfolio website for a client, showcasing their expertises, experience, projects, etc. (still under construstion)",  
     src: "/images/opeyemi.png",
     link: "https://opeyemi-five.vercel.app/"
+  },
+  {
+    title: "Cataleex",
+    description: "The official website an experienced web3 marketing agency (still under construction).",  
+    src: "/images/Cataleex.png",
+    link: "https://cataleex.vercel.app/"
   },
   {
     title: "NFT Marketplace",
