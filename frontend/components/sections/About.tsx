@@ -18,9 +18,9 @@ const AboutSection = () => (
           I enjoy clean code, great UI, and yes, I judge websites that default to light mode. 
           I&apos;m always learning, always building, and always down to learn and work with others.
         </p>
-        <p className="mb-6">
+        {/* <p className="mb-6">
           My journey in tech is driven by curiosity and a desire to solve real-world problems through innovative solutions.
-        </p>
+        </p> */}
         <Link href="https://docs.google.com/document/d/1KxGxy30eQacNBsMPzWqAqZUKcwvWDu38u3VIIWwmItQ/export?format=pdf">
           <Button className="bg-yellow-400 text-black hover:bg-yellow-500">
             <Download className="mr-2 h-4 w-4" /> Download Resume
