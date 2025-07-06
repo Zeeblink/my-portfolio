@@ -1,4 +1,4 @@
-import { Code2, Search, LayoutDashboard, Database, } from "lucide-react"
+import { Code, Code2, Search, LayoutDashboard, Database, } from "lucide-react"
 import { LucideIcon } from 'lucide-react'
 
 interface Service {
@@ -9,25 +9,25 @@ interface Service {
 
 export const services: Service[] = [
   {
-    icon: Code2,
-    title: "Frontend Development",
-    description: "I build modern, responsive interfaces with React and Next.js, focusing on performance and a seamless user experience."
+    icon: Code,
+    title: "Web Development",
+    description: "I build  stunning and unique professional websites for individuals, brands, agencies and all sorts of businesses"
   },
   {
-    icon: Search,
-    title: "Next.js Optimized SEO Landing Pages",
-    description: "I create high-performance, SEO-friendly landing pages that boost visibility and drive engagement."
+    icon: Code2,
+    title: "Frontend Development",
+    description: "I build modern, stunning and responsive interfaces with Next.js and Shadcn ui, focusing on performance and a seamless user experience."
   },
   {
     icon: LayoutDashboard,
     title: "Implementing Designs (Figma to Code)",
-    description: "I transform Figma and other designs into pixel-perfect, responsive web pages that match the original vision."
+    description: "I effortessly transform all sorts of Figma designs into pixel-perfect, responsive web pages that match the original vision."
   },
   {
-    icon: Database,
-    title: "Fullstack Web Apps",
-    description: "I develop full-featured web apps, handling everything from frontend to backend with a secure, scalable setup."
-  }
+    icon: Search,
+    title: "Next.js Optimized SEO Landing Pages",
+    description: "I create high-performance, SEO-friendly landing pages that boost your digital visibility and drive engagement."
+  },
 ]
 
 export const techStack = [
@@ -77,13 +77,13 @@ export const projects = [
 
   {
     title: "Professional Portfolio Website",
-    description: "Professional portfolio website for a client, showcasing their expertises, experience, projects, etc. (still under construstion)",  
+    description: "Professional portfolio website for an incredible client, showcasing her expertises, experience, projects, etc. (still under construstion)",  
     src: "/images/opeyemi.png",
     link: "https://opeyemi-five.vercel.app/"
   },
   {
     title: "Cataleex",
-    description: "The official website an experienced web3 marketing agency (still under construction).",  
+    description: "The official website of an experienced web3 marketing agency (still under construction).",  
     src: "/images/Cataleex.png",
     link: "https://cataleex.vercel.app/"
   },
@@ -136,10 +136,10 @@ export const experience = [
   },
   {
     period: "August 2024 - Present",
-    role: "Freelance Next.js Front-end Developer",
+    role: "Freelance Front-end Developer",
     company: "Self-employed",
     link: "#",
-    description: "Developing custom web applications for clients using Next.js and modern web technologies."
+    description: "I currently work as a freelancer, building websites for individuals and businesses."
   },
   // {
   //   period: "2022 - 2023",
